@@ -12,15 +12,15 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Background(
       child: Responsive(
-        mobile: MobileBackgroundScreen(),
-        desktop: WebBackgroundScreen(),
+        mobile: MobileWelcomeScreen(),
+        desktop: WebWelcomeScreen(),
       ),
     );
   }
 }
 
-class WebBackgroundScreen extends StatelessWidget {
-  const WebBackgroundScreen({
+class WebWelcomeScreen extends StatelessWidget {
+  const WebWelcomeScreen({
     Key? key,
   }) : super(key: key);
 
@@ -49,8 +49,8 @@ class WebBackgroundScreen extends StatelessWidget {
   }
 }
 
-class MobileBackgroundScreen extends StatelessWidget {
-  const MobileBackgroundScreen({
+class MobileWelcomeScreen extends StatelessWidget {
+  const MobileWelcomeScreen({
     Key? key,
   }) : super(key: key);
 
