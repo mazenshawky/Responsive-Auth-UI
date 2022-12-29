@@ -11,13 +11,9 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Background(
-      child: SingleChildScrollView(
-        child: SafeArea(
-          child: Responsive(
-            mobile: MobileBackgroundScreen(),
-            desktop: WebBackgroundScreen(),
-          ),
-        ),
+      child: Responsive(
+        mobile: MobileBackgroundScreen(),
+        desktop: WebBackgroundScreen(),
       ),
     );
   }
@@ -30,23 +26,25 @@ class WebBackgroundScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        const Expanded(
-          child: WelcomeImage(),
-        ),
-        Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              SizedBox(
-                width: 450,
-                child: LoginAndSignupBtn(),
-              ),
-            ],
+    return SingleChildScrollView(
+      child: Row(
+        children: [
+          const Expanded(
+            child: WelcomeImage(),
           ),
-        ),
-      ],
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                SizedBox(
+                  width: 450,
+                  child: LoginAndSignupBtn(),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -58,12 +56,14 @@ class MobileBackgroundScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: const [
-        WelcomeImage(),
-        LoginAndSignupBtn(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          WelcomeImage(),
+          LoginAndSignupBtn(),
+        ],
+      ),
     );
   }
 }
