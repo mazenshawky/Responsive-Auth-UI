@@ -19,42 +19,44 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Background(
       child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'LOGIN',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: context.height * 0.03),
-            SvgPicture.asset(
-              IconAssets.login,
-              height: context.height * 0.35,
-            ),
-            SizedBox(height: context.height * 0.03),
-            RoundedInputField(
-              hintText: 'Your Email',
-              onChanged: (value) {},
-            ),
-            RoundedPasswordField(
-              onChanged: (value) {},
-            ),
-            RoundedButton(
-              text: 'LOGIN',
-              press: () {},
-            ),
-            SizedBox(height: context.height * 0.03),
-            AlreadyHaveAnAccountCheck(
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SignUpScreen(),
-                  ),
-                );
-              },
-            ),
-          ],
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'LOGIN',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: context.height * 0.03),
+              SvgPicture.asset(
+                IconAssets.login,
+                height: context.height * 0.35,
+              ),
+              SizedBox(height: context.height * 0.03),
+              RoundedInputField(
+                hintText: 'Your Email',
+                onChanged: (value) {},
+              ),
+              RoundedPasswordField(
+                onChanged: (value) {},
+              ),
+              RoundedButton(
+                text: 'LOGIN',
+                press: () {},
+              ),
+              SizedBox(height: context.height * 0.03),
+              AlreadyHaveAnAccountCheck(
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SignUpScreen(),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

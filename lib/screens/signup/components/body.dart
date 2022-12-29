@@ -21,61 +21,63 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Background(
       child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'SIGN UP',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: context.height * 0.03),
-            SvgPicture.asset(
-              IconAssets.signup,
-              height: context.height * 0.35,
-            ),
-            SizedBox(height: context.height * 0.03),
-            RoundedInputField(
-              hintText: 'Your Email',
-              onChanged: (value) {},
-            ),
-            RoundedPasswordField(
-              onChanged: (value) {},
-            ),
-            RoundedButton(
-              text: 'SIGN UP',
-              press: () {},
-            ),
-            SizedBox(height: context.height * 0.03),
-            AlreadyHaveAnAccountCheck(
-              login: false,
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const LoginScreen(),
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'SIGN UP',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: context.height * 0.03),
+              SvgPicture.asset(
+                IconAssets.signup,
+                height: context.height * 0.35,
+              ),
+              SizedBox(height: context.height * 0.03),
+              RoundedInputField(
+                hintText: 'Your Email',
+                onChanged: (value) {},
+              ),
+              RoundedPasswordField(
+                onChanged: (value) {},
+              ),
+              RoundedButton(
+                text: 'SIGN UP',
+                press: () {},
+              ),
+              SizedBox(height: context.height * 0.03),
+              AlreadyHaveAnAccountCheck(
+                login: false,
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(),
+                    ),
+                  );
+                },
+              ),
+              const OrDivider(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SocialIcon(
+                    iconSrc: IconAssets.facebook,
+                    press: () {},
                   ),
-                );
-              },
-            ),
-            const OrDivider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SocialIcon(
-                  iconSrc: IconAssets.facebook,
-                  press: () {},
-                ),
-                SocialIcon(
-                  iconSrc: IconAssets.twitter,
-                  press: () {},
-                ),
-                SocialIcon(
-                  iconSrc: IconAssets.google,
-                  press: () {},
-                ),
-              ],
-            ),
-          ],
+                  SocialIcon(
+                    iconSrc: IconAssets.twitter,
+                    press: () {},
+                  ),
+                  SocialIcon(
+                    iconSrc: IconAssets.google,
+                    press: () {},
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

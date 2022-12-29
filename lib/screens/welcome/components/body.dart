@@ -16,44 +16,46 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Background(
       child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'WELCOME TO EDU',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: context.height * 0.03),
-            SvgPicture.asset(
-              IconAssets.chat,
-              height: context.height * 0.45,
-            ),
-            SizedBox(height: context.height * 0.05),
-            RoundedButton(
-              text: 'LOGIN',
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const LoginScreen(),
-                  ),
-                );
-              },
-            ),
-            RoundedButton(
-              text: 'SIGN UP',
-              color: AppColors.kPrimaryLightColor,
-              textColor: Colors.black,
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SignUpScreen(),
-                  ),
-                );
-              },
-            ),
-          ],
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'WELCOME TO EDU',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: context.height * 0.03),
+              SvgPicture.asset(
+                IconAssets.chat,
+                height: context.height * 0.45,
+              ),
+              SizedBox(height: context.height * 0.05),
+              RoundedButton(
+                text: 'LOGIN',
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(),
+                    ),
+                  );
+                },
+              ),
+              RoundedButton(
+                text: 'SIGN UP',
+                color: AppColors.kPrimaryLightColor,
+                textColor: Colors.black,
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SignUpScreen(),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
