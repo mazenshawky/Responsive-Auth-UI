@@ -65,10 +65,19 @@ class MobileSignUpScreen extends StatelessWidget {
       child: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            SignUpScreenImage(),
-            SignUpForm(),
-            SocialSignUp(),
+          children: [
+            const SignUpScreenImage(),
+            Row(
+              children: const [
+                Spacer(),
+                Expanded(
+                  flex: 8,
+                  child: SignUpForm(),
+                ),
+                Spacer(),
+              ],
+            ),
+            const SocialSignUp(),
           ],
         ),
       ),

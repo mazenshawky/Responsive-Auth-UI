@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../components/rounded_button.dart';
 import '../../../resources/app_colors.dart';
 import '../../Signup/signup_screen.dart';
 import '../../login/login_screen.dart';
@@ -14,29 +13,41 @@ class LoginAndSignupBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        RoundedButton(
-          text: 'LOGIN',
-          press: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const LoginScreen(),
-              ),
-            );
-          },
+        Hero(
+          tag: "login_btn",
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const LoginScreen(),
+                ),
+              );
+            },
+            child: const Text(
+              "LOGIN",
+            ),
+          ),
         ),
-        RoundedButton(
-          text: 'SIGN UP',
-          color: AppColors.kPrimaryLightColor,
-          textColor: Colors.black,
-          press: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const SignUpScreen(),
-              ),
-            );
-          },
+        const SizedBox(height: 16),
+        Hero(
+          tag: "signup_btn",
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SignUpScreen(),
+                ),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.kPrimaryLightColor, elevation: 0),
+            child: const Text(
+              "SIGN UP",
+              style: TextStyle(color: Colors.black),
+            ),
+          ),
         ),
       ],
     );

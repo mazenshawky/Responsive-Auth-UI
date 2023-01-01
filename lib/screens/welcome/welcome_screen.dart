@@ -61,9 +61,18 @@ class MobileWelcomeScreen extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          WelcomeImage(),
-          LoginAndSignupBtn(),
+        children: [
+          const WelcomeImage(),
+          Row(
+            children: const [
+              Spacer(),
+              Expanded(
+                flex: 8,
+                child: LoginAndSignupBtn(),
+              ),
+              Spacer(),
+            ],
+          ),
         ],
       ),
     );

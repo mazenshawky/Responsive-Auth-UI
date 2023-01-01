@@ -1,4 +1,4 @@
-import 'package:auth_ui/resources/app_colors.dart';
+import 'package:auth_ui/resources/app_themes.dart';
 import 'package:auth_ui/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,10 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Auth',
-      theme: ThemeData(
-        primaryColor: AppColors.kPrimaryColor,
-        scaffoldBackgroundColor: Colors.white,
-      ),
+      theme: getApplicationTheme(),
       home: const WelcomeScreen(),
     );
   }

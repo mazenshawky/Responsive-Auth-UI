@@ -62,9 +62,18 @@ class MobileLoginScreen extends StatelessWidget {
       child: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            LoginScreenImage(),
-            LoginForm(),
+          children: [
+            const LoginScreenImage(),
+            Row(
+              children: const [
+                Spacer(),
+                Expanded(
+                  flex: 8,
+                  child: LoginForm(),
+                ),
+                Spacer(),
+              ],
+            ),
           ],
         ),
       ),
